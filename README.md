@@ -22,9 +22,7 @@ point, but **automated deployments ended up failing** because EB ran
 pre and post-deployment hooks that triggered unwanted Apache restarts.
 If Apache isn't running, then everything breaks. If you're stuck,
 SSH into the EC2 instance and examine your logs at `/var/log/eb-activity`,
-`/var/log/http`, and `/var/log/nginx`.
-
-Personally, I'm repulsed by the amount of configuration hacking required. Anyways, It's your life.
+`/var/log/http`, and `/var/log/nginx`. Good luck!
 
 - [Nginx and EB with Django uWSGI](https://github.com/wolfg1969/elastic-beanstalk-nginx-uwsgi-django)
 - [Replacing Apache with Nginx on AWS](http://www.nczonline.net/blog/2012/09/14/replacing-apache-with-nginx-on-elastic-beanstalk/)
@@ -33,12 +31,12 @@ Personally, I'm repulsed by the amount of configuration hacking required. Anyway
 
 ### Running the application
 
-Locally:
+uWSGI Locally:
 ```
 uwsgi --http 127.0.0.1:8000 -w application:application
 ```
 
-Nginx:
+uWSGI Nginx:
 ```
 uwsgi --socket 127.0.0.1:8000 -w application:application
 ```
