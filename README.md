@@ -1,6 +1,6 @@
 # elastic-beanstalk-nginx-flask
 This is a hello world **Flask** application that runs with AWS **Elastic Beanstalk**
-behind **Nginx** and **uWSGI**.
+behind **Nginx** and **uWSGI**. Just kidding.
 
 After attempting this myself, I wanted to share my experience trying
 to configure Elastic Beanstalk with Nginx. **It's terrible, don't do it.**
@@ -10,6 +10,9 @@ the configuration files with `.ebextensions`, but in the end your
 configuration files will be difficult to understand, and your
 deployment process will face unexpected issues that will be
 difficult to troubleshoot.
+
+**Note:** Python applications are tied to Apache. If you decide to use
+node.js, Elastic Beanstalk will run with nginx instead.
 
 ### Still wanna go for it?
 
